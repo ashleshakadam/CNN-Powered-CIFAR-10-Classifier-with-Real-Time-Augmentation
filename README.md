@@ -57,6 +57,7 @@ Results & Evaluation
 
 
 **Example evaluation snippet**
+
 loss, accuracy = model.evaluate(x_test, y_test)
 print(f"Test accuracy: {accuracy:.4f}")
 
