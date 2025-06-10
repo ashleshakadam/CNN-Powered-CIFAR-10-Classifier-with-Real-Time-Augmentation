@@ -55,7 +55,8 @@ Results & Evaluation
 	•	Test Accuracy: ≥ 90% on the 10,000-image test set
 	•	Training Dynamics: Loss and accuracy curves demonstrate stable convergence with minimal overfitting.
 
-# Example evaluation snippet
+
+**Example evaluation snippet**
 loss, accuracy = model.evaluate(x_test, y_test)
 print(f"Test accuracy: {accuracy:.4f}")
 
