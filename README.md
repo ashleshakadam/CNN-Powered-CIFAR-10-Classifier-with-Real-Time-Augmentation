@@ -27,7 +27,7 @@ Input (32×32×3)
 Installation & Setup
 	1.	Clone the repository
 
-git clone https://github.com/yourusername/cifar10-cnn.git
+git clone https://github.com/ashleshakadam/CNN-Powered-CIFAR-10-Classifier-with-Real-Time-Augmentation.git cifar10-cnn
 cd cifar10-cnn
 
 2. **(Optional) Create a virtual environment**
