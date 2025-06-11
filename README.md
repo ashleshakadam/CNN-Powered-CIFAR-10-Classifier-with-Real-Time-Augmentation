@@ -32,29 +32,30 @@ Input (32×32×3)
 
 2. **(Optional) Create a virtual environment**  
    ```bash
-python3 -m venv venv
-source venv/bin/activate   # macOS/Linux
-venv\Scripts\activate      # Windows
+   python3 -m venv venv
+   source venv/bin/activate   # macOS/Linux
+   venv\Scripts\activate      # Windows
 
 3. **Install dependencies**  
 2. **(Optional) Create a virtual environment**  
    ```bash
-pip install -r requirements.txt
+   pip install -r requirements.txt
 
 
-Usage
-	1.	Launch Jupyter Notebook
+## Usage
 
+1. **Launch Jupyter Notebook**
+   
+```bash
 jupyter notebook
 
-
-	2.	Open CIFAR-10_Image_Classification.ipynb and execute cells sequentially:
+2. **Open CIFAR-10_Image_Classification.ipynb and execute cells sequentially:**
 	•	Data loading & preprocessing
 	•	Model definition
 	•	Training & validation
 	•	Evaluation & visualization
 
-Results & Evaluation
+3. **Results & Evaluation**
 	•	Test Accuracy: ≥ 90% on the 10,000-image test set
 	•	Training Dynamics: Loss and accuracy curves demonstrate stable convergence with minimal overfitting.
 
