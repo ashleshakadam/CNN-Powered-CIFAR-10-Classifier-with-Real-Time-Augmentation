@@ -1,81 +1,89 @@
 # CIFAR-10 Image Classification with Convolutional Neural Networks
 
 ## Project Overview
-This repository presents a rigorous implementation of a convolutional neural network (CNN) for image classification on the CIFAR-10 dataset. Through methodical experimentation and disciplined engineering, this project achieves state-of-the-art accuracy while maintaining transparency and reproducibility.
 
-- **Objective:** Develop and evaluate a robust CNN to classify 60,000 32×32 color images into 10 semantic categories.  
-- **Dataset Details:** CIFAR-10 comprises 50,000 training and 10,000 test images across 10 classes: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, and truck.  
-- **Key Contributions:**  
-  1. Comprehensive data normalization and one-hot encoding pipeline  
-  2. On-the-fly data augmentation (random flips, translations) to enhance generalization  
-  3. Custom three-block CNN architecture with dropout regularization  
-  4. Empirical hyperparameter tuning using Adam optimizer and learning-rate scheduling  
-  5. Modular, reproducible Jupyter Notebook workflow  
+This repository implements a convolutional neural network (CNN) to classify images from the CIFAR-10 dataset. The project emphasizes reproducibility, modularity, and rigorous evaluation.
+
+- **Objective:** Construct and evaluate a CNN to categorize 60,000 32×32 color images into 10 semantic classes.  
+- **Dataset:** CIFAR-10 (50,000 training images; 10,000 test images) across classes: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck.  
+- **Contributions:**  
+  1. Data normalization and one-hot label encoding pipeline.  
+  2. On-the-fly data augmentation (random flips and translations).  
+  3. Three-block CNN architecture with dropout regularization.  
+  4. Hyperparameter optimization using Adam and learning-rate scheduling.  
+  5. Reproducible Jupyter Notebook workflow.  
 
 ## Architectural Summary
-```text
-Input (32×32×3)
-→ [Conv2D(filters=32, kernel_size=3×3) → ReLU
-   → Conv2D(filters=32, kernel_size=3×3) → ReLU
-   → MaxPooling(pool_size=2×2) → Dropout(rate=0.25)] × 3
+
+The network follows a sequential design:
+
+Input: 32×32×3 images
+→ [Conv2D(32 filters, 3×3) → ReLU
+   → Conv2D(32 filters, 3×3) → ReLU
+   → MaxPooling(2×2) → Dropout(0.25)] × 3
 → Flatten
-→ Dense(units=512) → ReLU → Dropout(rate=0.5)
-→ Dense(units=10) → Softmax
+→ Dense(512 units) → ReLU → Dropout(0.5)
+→ Dense(10 units) → Softmax
 
 	•	Activation: ReLU
 	•	Regularization: Dropout (25% in conv blocks; 50% before final dense)
-	•	Loss & Optimizer: Categorical Crossentropy + Adam (default LR)
+	•	Loss: Categorical Crossentropy
+	•	Optimizer: Adam (default learning rate)
 
-Installation & Setup
-	1.	Clone the repository
+## Installation & Setup
 
+**Clone the repository and install dependencies:**
+
+```bash
 git clone https://github.com/ashleshakadam/CNN-Powered-CIFAR-10-Classifier-with-Real-Time-Augmentation.git
 cd CNN-Powered-CIFAR-10-Classifier-with-Real-Time-Augmentation
+```
 
+**Create and activate a virtual environment:**
 
-	2.	(Optional) Create and activate a virtual environment
-
+```bash
 python3 -m venv venv
 source venv/bin/activate   # macOS/Linux
 venv\Scripts\activate      # Windows
+```
 
+**Install Python packages:**
 
-	3.	Install dependencies
-
+```bash
 pip install -r requirements.txt
+```
 
+## Usage
 
+**Launch Jupyter Notebook and run the analysis pipeline:**
 
-Usage
-	1.	Launch Jupyter Notebook
-
+```bash
 jupyter notebook
+```
 
+**Open CIFAR-10_Image_Classification.ipynb and execute cells sequentially:**
+	1.	Data loading and preprocessing
+	2.	Model definition
+	3.	Training and validation
+	4.	Evaluation and visualization
 
-	2.	Open CIFAR-10_Image_Classification.ipynb and execute cells in order:
-	•	Data loading & preprocessing
-	•	Model definition
-	•	Training & validation
-	•	Evaluation & visualization
+**Results & Evaluation**
 
-Results & Evaluation
-	•	Test Accuracy: ≥ 90% on the 10,000-image test set
-	•	Training Dynamics: Loss and accuracy curves exhibit stable convergence and minimal overfitting
+The model achieves ≥ 90% test accuracy on the 10,000-image test set. Training and validation curves demonstrate stable convergence with minimal overfitting.
 
-# Example evaluation snippet
 loss, accuracy = model.evaluate(x_test, y_test, verbose=0)
 print(f"Test accuracy: {accuracy:.4f}")
 
-Extensibility
-	•	Integrate deeper architectures (ResNet, DenseNet)
-	•	Automate hyperparameter search via Bayesian optimization
-	•	Implement k-fold cross-validation for robustness
+**Extensibility**
+	•	Integrate residual architectures (ResNet, DenseNet) for deeper representation.
+	•	Automate hyperparameter search via Bayesian optimization.
+	•	Implement k-fold cross-validation to assess robustness.
 
-License
+**License**
 
-This project is distributed under the MIT License. See LICENSE for full text.
+This project is licensed under the MIT License. See the LICENSE file for full terms.
 
-References
-	1.	Krizhevsky, A. (2009). Learning Multiple Layers of Features from Tiny Images. University of Toronto.
-	2.	Chollet, F. et al. (2023). Deep Learning with Python (2nd ed.). Manning Publications.
+**References**
+	1.	Krizhevsky, A. (2009). Learning Multiple Layers of Features from Tiny Images. University of Toronto Technical Report.
+	2.	Chollet, F., et al. (2023). Deep Learning with Python (2nd ed.). Manning Publications.
 
