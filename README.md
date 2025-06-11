@@ -1,6 +1,6 @@
-## CIFAR-10 Image Classification with Convolutional Neural Networks
+### CIFAR-10 Image Classification with Convolutional Neural Networks
 
-### Project Overview
+#### Project Overview
 
 This repository implements a convolutional neural network (CNN) to classify images from the CIFAR-10 dataset. The project emphasizes reproducibility, modularity, and rigorous evaluation.
 
@@ -13,7 +13,7 @@ This repository implements a convolutional neural network (CNN) to classify imag
   4. Hyperparameter optimization using Adam and learning-rate scheduling.  
   5. Reproducible Jupyter Notebook workflow.  
 
-### Architectural Summary
+#### Architectural Summary
 
 The network follows a sequential design:
 
@@ -30,7 +30,7 @@ Input: 32×32×3 images
 	•	Loss: Categorical Crossentropy
 	•	Optimizer: Adam (default learning rate)
 
-### Installation & Setup
+#### Installation & Setup
 
 **Clone the repository and install dependencies:**
 
@@ -53,7 +53,7 @@ venv\Scripts\activate      # Windows
 pip install -r requirements.txt
 ```
 
-### Usage
+#### Usage
 
 **Launch Jupyter Notebook and run the analysis pipeline:**
 
@@ -81,7 +81,8 @@ print(f"Test accuracy: {accuracy:.4f}")
 
 **License**
 
-This project is licensed under the MIT License. See the LICENSE file for full terms.
+This project is licensed under the MIT License.  
+See [LICENSE](https://github.com/ashleshakadam/CNN-Powered-CIFAR-10-Classifier-with-Real-Time-Augmentation/blob/main/LICENSE) for full terms.
 
 **References**
 	1.	Krizhevsky, A. (2009). Learning Multiple Layers of Features from Tiny Images. University of Toronto Technical Report.
